@@ -6,7 +6,6 @@ import { Navigation } from "./Navigation";
 const sidebar = {
   open: {
     transition: {
-      ease: "easeOut",
       stiffness: 20,
       restDelta: 2,
       duration: 0.5,
@@ -16,8 +15,8 @@ const sidebar = {
   },
   closed: {
     transition: {
-      type: "",
       stiffness: 400,
+      delay: 0.3,
       // damping: 40,
     },
     width: 48,
