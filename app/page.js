@@ -1,6 +1,7 @@
 "use client";
 import { AnimatePresence, motion, useAnimate, useAnimationControls, useInView } from "framer-motion";
 import { useEffect, useState } from "react";
+import Example1 from "./example1";
 
 const container = {
   hidden: {
@@ -28,20 +29,21 @@ export default function Home() {
   const controls = useAnimationControls();
   console.log(controls);
   return (
-    <AnimatePresence>
-      <motion.ul
-        className="w-36 h-36 grid grid-cols-2 gap-4 p-4 bg-gray-300 bg-opacity-30 overflow-hidden m-0 list-none rounded-lg"
-        variants={container}
-        initial="visible"
-        animate={controls}
-        exit={{ scale: 0, x: [0, 100, 0] }}
-        onMouseEnter={() => controls.start("hidden")}
-        onMouseLeave={() => controls.start("visible")}
-      >
-        {[0, 1, 2, 3].map((index) => (
-          <motion.li key={index} className="bg-white rounded-full" variants={item} />
-        ))}
-      </motion.ul>
-    </AnimatePresence>
+    // <AnimatePresence>
+    //   <motion.ul
+    //     className="w-36 h-36 grid grid-cols-2 gap-4 p-4 bg-gray-300 bg-opacity-30 overflow-hidden m-0 list-none rounded-lg"
+    //     variants={container}
+    //     initial="visible"
+    //     animate={controls}
+    //     exit={{ scale: 0, x: [0, 100, 0] }}
+    //     onMouseEnter={() => controls.start("hidden")}
+    //     onMouseLeave={() => controls.start("visible")}
+    //   >
+    //     {[0, 1, 2, 3].map((index) => (
+    //       <motion.li key={index} className="bg-white rounded-full" variants={item} />
+    //     ))}
+    //   </motion.ul>
+    // </AnimatePresence>
+    <Example1 />
   );
 }
